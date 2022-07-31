@@ -12,8 +12,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "hw-4": "npx ts-node ./hw-4/index.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "custom-test": "npx ts-node ./hw-4/index.ts"
   },
   "repository": {
     "type": "git",
