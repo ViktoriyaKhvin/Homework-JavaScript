@@ -1,0 +1,28 @@
+{
+  "devDependencies": {
+    "@types/mocha": "^9.1.1"
+  },
+  "dependencies": {
+    "concatenator": "^0.0.1",
+    "prettier": "^2.7.1",
+    "save-dev": "^0.0.1-security",
+    "ts-node": "^10.9.1"
+  },
+  "name": "js",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "custom-test": "npx ts-node ./hw-4/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ViktoriyaKhvin/JS.git"
+  },
+  "author": "ViktoriyaKhvin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ViktoriyaKhvin/JS/issues"
+  },
+  "homepage": "https://github.com/ViktoriyaKhvin/JS#readme",
+  "description": ""
+}
