@@ -12,7 +12,7 @@
     "version": "1.0.0",
     "main": "index.js",
     "scripts": {
-      "custom-test": "npx ts-node ./hw-4/index.ts"
+      "custom-test": "npx ts-node ./hw16/index.ts"
     },
     "repository": {
       "type": "git",
