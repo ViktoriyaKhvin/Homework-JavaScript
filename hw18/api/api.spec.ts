@@ -8,7 +8,7 @@ import superagent from "superagent";
      describe('GET requests:', () => {
          it('Should correctly get data of users list', async () => {
              try {
-                 response = await superagent.get(`${BASE_URL}users`);
+                 response = await superagent.get("https://reqres.in/api/users");
              } catch (e: any) {
                  console.log(e.message);
              }
@@ -19,7 +19,7 @@ import superagent from "superagent";
 
          it('Should correctly get data of list resource', async () => {
              try {
-                 response = await superagent.get(`${BASE_URL}unknown`)
+                 response = await superagent.get("https://reqres.in/api/unknown")
              } catch (e: any) {
                  console.log(e.message);
              }
@@ -32,12 +32,12 @@ import superagent from "superagent";
      describe('POST requests:', () => {
          it('Should correctly create new user', async () => {
              formData = {
-                 name: "Vladimir",
-                 job: "SDET"
+                 name: "Viktoriya",
+                 job: "Manager"
              }
 
              try {
-                 response = await superagent.post(`${BASE_URL}users`)
+                 response = await superagent.post("https://reqres.in/api/users")
                      .set('Content-Type', 'Application/json')
                      .send(formData);
              } catch (e: any) {
@@ -50,12 +50,12 @@ import superagent from "superagent";
 
          it('Should correctly get auth token', async () => {
              formData = {
-                 email: "eve.holt@reqres.in",
-                 password: "cityslicka"
+                 email: "barsik@yandex.by",
+                 password: "barsik2022"
              }
 
              try {
-                 response = await superagent.post(`${BASE_URL}login`)
+                 response = await superagent.post("https://reqres.in/api//login")
                      .set('Content-Type', 'Application/json')
                      .send(formData);
              } catch (e: any) {
@@ -69,11 +69,11 @@ import superagent from "superagent";
 
          it('Should get error message after auth request with uncorrectly credentials', async () => {
              formData = {
-                 email: "sydney@fife"
+                 email: "lol@lol"
              }
 
              try {
-                 response = await superagent.post(`${BASE_URL}register`)
+                 response = await superagent.post("https://reqres.in/api/register")
                      .set('Content-Type', 'Application/json')
                      .send(formData);
              } catch (e: any) {
@@ -88,12 +88,12 @@ import superagent from "superagent";
      describe('PUT requests:', () => {
          it('Should correctly put users data', async () => {
              formData = {
-                 name: "morpheus",
-                 job: "zion resident"
+                 name: "natasha",
+                 job: "developer"
              }
 
              try {
-                 response = await superagent.put(`${BASE_URL}users/2`)
+                 response = await superagent.put("https://reqres.in/api/users/2")
                      .set('Content-Type', 'Application/json')
                      .send(formData);
              } catch (e: any) {
@@ -108,12 +108,12 @@ import superagent from "superagent";
      describe('PATCH requests:', () => {
          it('Should correctly patch users data', async () => {
              formData = {
-                 name: "morpheus",
-                 job: "zion resident"
+                 name: "natasha",
+                 job: "developer"
              }
 
              try {
-                 response = await superagent.patch(`${BASE_URL}users/2`)
+                 response = await superagent.patch("https://reqres.in/api/users/2")
                      .set('Content-Type', 'Application/json')
                      .send(formData);
              } catch (e: any) {
@@ -128,7 +128,7 @@ import superagent from "superagent";
      describe('DELETE requests:', () => {
          it('Should correctly remove the user', async () => {
              try {
-                 response = await superagent.delete(`${BASE_URL}users/2`)
+                 response = await superagent.delete("https://reqres.in/api/users/2")
              } catch (e: any) {
                  console.log(e.message);
              }
