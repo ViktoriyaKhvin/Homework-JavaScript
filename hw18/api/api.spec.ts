@@ -1,7 +1,6 @@
 import superagent from "superagent";
 
  describe('API tests:', () => {
-     const BASE_URL = 'https://reqres.in/api/';
      let response: any;
      let formData: any;
 
