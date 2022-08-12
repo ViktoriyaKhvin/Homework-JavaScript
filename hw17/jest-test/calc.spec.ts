@@ -18,7 +18,7 @@ import { expect } from "chai";
    test("Correctly finds the sum of two negative numbers", () => {
      expect(calc.addition(-1, -1)).to.equal(-2);
    });
-   test("Correctly finds the difference of positive and negative numbers", () => {
+   test("Correctly finds the difference of positive and zero numbers", () => {
      expect(calc.subtraction(-5, 0)).to.equal(-5);
    });
    test("Correctly finds the  multiplication of positive and negative numbers", () => {

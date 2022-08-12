@@ -19,7 +19,7 @@ import { Calculator } from "../src/calculator";
    it("Correctly finds the sum of two negative numbers", () => {
      assert.equal(calc.addition(-1, -1), -2);
    });
-   it("Correctly finds the difference of positive and negative numbers", () => {
+   it("Correctly finds the difference of positive and zero numbers", () => {
      assert.equal(calc.subtraction(-5, 0), -5);
    });
    it("Correctly finds the multiplication of positive and negative numbers", () => {
