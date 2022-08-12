@@ -4,8 +4,8 @@ import { customChecker } from "./custom-checker";
  customChecker(2, 2, '+', 4);
  customChecker(6, 3, '-', 3);
  customChecker(10, 5, '/', 2);
- customChecker(5, 5, '*', 25);
- customChecker(100, 99, '-', 1);
+ customChecker(10, 0, '-', -10);
+ customChecker(-2, 9, '+', 7);
  customChecker(1, 1, '*', 1);
  customChecker(90, 10, '/', 9);
 
