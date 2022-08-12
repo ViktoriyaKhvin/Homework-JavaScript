@@ -7,7 +7,7 @@ import { customChecker } from "./custom-checker";
  customChecker(10, 0, '-', -10);
  customChecker(-2, 9, '+', 7);
  customChecker(1, 1, '*', 1);
- customChecker(80, 10, '/', 8);
+ customChecker(-80, 10, '/', -8);
 
 
  //negative checks
