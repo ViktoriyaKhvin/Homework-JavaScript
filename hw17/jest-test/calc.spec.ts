@@ -12,7 +12,7 @@ import { expect } from "chai";
    test("Correctly finds the result of division of two positive numbers", () => {
      expect(calc.multiplication(12, 12)).to.equal(144);
    });
-   test("Correctly finds the quotient of two positive numbers", () => {
+   test("Correctly finds the division of two positive numbers", () => {
      expect(calc.division(10, 2)).to.equal(5);
    });
    test("Correctly finds the sum of two negative numbers", () => {
@@ -24,7 +24,7 @@ import { expect } from "chai";
    test("Correctly finds the result of division of positive and negative numbers", () => {
      expect(calc.multiplication(-10, 10)).to.equal(-100);
    });
-   test("Correctly finds the quotient of positive and negative numbers", () => {
+   test("Correctly finds the division of positive and negative numbers", () => {
      expect(calc.division(99, -9)).to.equal(-11);
    });
  });

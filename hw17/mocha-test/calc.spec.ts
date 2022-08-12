@@ -13,7 +13,7 @@ import { Calculator } from "../src/calculator";
    it("Correctly finds the result of division of two positive numbers", () => {
      assert.equal(calc.multiplication(12, 12), 144);
    });
-   it("Correctly finds the quotient of two positive numbers", () => {
+   it("Correctly finds the division of two positive numbers", () => {
      assert.equal(calc.division(10, 2), 5);
    });
    it("Correctly finds the sum of two negative numbers", () => {
@@ -25,7 +25,7 @@ import { Calculator } from "../src/calculator";
    it("Correctly finds the result of division of positive and negative numbers", () => {
      assert.equal(calc.multiplication(-10, 10), -100);
    });
-   it("Correctly finds the quotient of positive and negative numbers", () => {
+   it("Correctly finds the division of positive and negative numbers", () => {
      assert.equal(calc.division(99, -9), -11);
    });
  });
