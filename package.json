@@ -8,6 +8,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "hw16": "npx ts-node ./hw16/index.ts",
+    "hw17-test-mocha": "mocha --config='./hw17/.mocharc.json'",
+    "hw17-test-jest": "jest --config='./hw17/jest.config.cjs'",
     "hw18-test-jest": "jest --config='./hw18/jest.config.cjs'"
   },
   "repository": {
