@@ -2,9 +2,7 @@
   "dependencies": {
     "eslint": "^8.22.0",
     "mocha": "^10.0.0",
-    "nyc": "^15.1.0",
     "prettier": "^2.7.1",
-    "save-dev": "^0.0.1-security"
   },
   "name": "js",
   "version": "1.0.0",
@@ -34,7 +32,6 @@
     "@types/superagent": "^4.1.15",
     "chai": "^4.3.6",
     "jest": "^28.1.3",
-    "mochawesome": "^7.1.3",
     "superagent": "^8.0.0",
     "ts-jest": "^28.0.8",
     "ts-node": "^10.9.1",
