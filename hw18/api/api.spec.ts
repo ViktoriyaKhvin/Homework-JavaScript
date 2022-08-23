@@ -1,5 +1,4 @@
- import superagent from "superagent";
- import { describe, expect } from "@jest/globals";
+import superagent from "superagent";
 
  describe("Test HTTP methods", () => {
    const baseURL = "https://jsonplaceholder.typicode.com";
