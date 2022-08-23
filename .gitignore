@@ -1,4 +1,3 @@
 node_modules/
 *.exe/
-.DS_Store/
-BIN 
+.DS_Store hw18/.DS_Store
