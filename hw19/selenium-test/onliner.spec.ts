@@ -9,14 +9,32 @@ const defaultWaitingTime = 3000;
 let pageUrl: string;
 
 describe("Onliner selenium-tests", () => {
-
     before(async () => {
         await driver.manage().window().maximize();
     })
-
     beforeEach(async () => {
         await driver.get(baseUrl);
     })
+    
+it("Should navigate to the baraholka page from main page", async () => {
+        const baraholkaButtonLocator: Locator = By.css(`a[href="https://baraholka.onliner.by/"] span.b-main-navigation__text`)
+        await driver.wait(until.elementsLocated(baraholkaButtonLocator), defaultWaitingTime);
+        await driver.findElement(baraholkaButtonLocator).click();
+        pageUrl = "https://baraholka.onliner.by/";
+        await driver.wait(until.urlIs(pageUrl), defaultWaitingTime);
+        const baraholkaPageTitle = await driver.findElement(By.xpath(`//div[contains(@class, "b-mnforum-header-i")] //h1`))
+        expect(await baraholkaPageTitle.getText()).to.be.deep.equal("Барахолка")
+        })   
+
+it("Should navigate to the realt page from main page", async () => {
+        const realtButtonLocator: Locator = By.css(`a[href = "https://r.onliner.by/pk"] span.b-main-navigation__text`)
+        await driver.wait(until.elementsLocated(realtButtonLocator), defaultWaitingTime);
+        await driver.findElement(realtButtonLocator).click();
+        pageUrl = "https://r.onliner.by/pk/";
+        await driver.wait(until.urlIs(pageUrl), defaultWaitingTime);
+        const sellButton = await driver.findElement(By.css(`a[href="https://r.onliner.by/pk/"] span.project-navigation__sign`))
+        expect(await sellButton.getText()).to.be.deep.equal("Продажа")
+        })  
 
 it("The catalog page should open from the home page", async () => {
         const catalotButtonLocator: Locator = By.css(`a[href = "https://catalog.onliner.by"] span.b-main-navigation__text`);
@@ -38,26 +56,6 @@ it("Should navigate to the tasks page from main page", async () => {
         expect(await tasksPageTitle.getText()).to.be.deep.equal("Заказы")
         })
 
-it("Should navigate to the realt page from main page", async () => {
-        const realtButtonLocator: Locator = By.css(`a[href = "https://r.onliner.by/pk"] span.b-main-navigation__text`)
-        await driver.wait(until.elementsLocated(realtButtonLocator), defaultWaitingTime);
-        await driver.findElement(realtButtonLocator).click();
-        pageUrl = "https://r.onliner.by/pk/";
-        await driver.wait(until.urlIs(pageUrl), defaultWaitingTime);
-        const sellButton = await driver.findElement(By.css(`a[href="https://r.onliner.by/pk/"] span.project-navigation__sign`))
-        expect(await sellButton.getText()).to.be.deep.equal("Продажа")
-        })
-   
-it("Should navigate to the baraholka page from main page", async () => {
-        const baraholkaButtonLocator: Locator = By.css(`a[href="https://baraholka.onliner.by/"] span.b-main-navigation__text`)
-        await driver.wait(until.elementsLocated(baraholkaButtonLocator), defaultWaitingTime);
-        await driver.findElement(baraholkaButtonLocator).click();
-        pageUrl = "https://baraholka.onliner.by/";
-        await driver.wait(until.urlIs(pageUrl), defaultWaitingTime);
-        const baraholkaPageTitle = await driver.findElement(By.xpath(`//div[contains(@class, "b-mnforum-header-i")] //h1`))
-        expect(await baraholkaPageTitle.getText()).to.be.deep.equal("Барахолка")
-        })
-
 it("Should show protection pop up while login with correct credentials", async () => {
         const loginButtonLocator: Locator = By.className("auth-bar__item auth-bar__item--text")
         await driver.wait(until.elementsLocated(loginButtonLocator), defaultWaitingTime)
@@ -76,7 +74,7 @@ it("Should show protection pop up while login with correct credentials", async (
         const element = await driver.findElement(By.css("div.auth-form__mediabox span"));
         expect(await element.getText()).to.have.string(`Давайте проверим, вы робот или нет`);
         })
-        
+
 after(async () => {
         await driver.quit();
         })
