@@ -15,8 +15,13 @@ describe("Onliner selenium-tests", () => {
     beforeEach(async () => {
         await driver.get(baseUrl);
     })
-    
-it("Should navigate to the baraholka page from main page", async () => {
+
+it("Main page should be displayed when the user clicks on the logo of the site", async function () {
+        await driver.findElement(By.className('b-top-logo')).click();
+        await driver.wait(until.urlContains(baseUrl), defaultWaitingTime);
+    });    
+
+it("The transition from the home page to the flea market page should be carried out", async () => {
         const baraholkaButtonLocator: Locator = By.css(`a[href="https://baraholka.onliner.by/"] span.b-main-navigation__text`)
         await driver.wait(until.elementsLocated(baraholkaButtonLocator), defaultWaitingTime);
         await driver.findElement(baraholkaButtonLocator).click();
@@ -26,7 +31,7 @@ it("Should navigate to the baraholka page from main page", async () => {
         expect(await baraholkaPageTitle.getText()).to.be.deep.equal("Барахолка")
         })   
 
-it("Should navigate to the realt page from main page", async () => {
+it("There should be a transition from the home page to the realt page", async () => {
         const realtButtonLocator: Locator = By.css(`a[href = "https://r.onliner.by/pk"] span.b-main-navigation__text`)
         await driver.wait(until.elementsLocated(realtButtonLocator), defaultWaitingTime);
         await driver.findElement(realtButtonLocator).click();
@@ -46,7 +51,7 @@ it("The catalog page should open from the home page", async () => {
         expect(await catalogTitle.getText()).to.be.deep.equal("Все суперцены!")
         })
 
-it("Should navigate to the tasks page from main page", async () => {
+it("From the main page should go to the tasks page ", async () => {
         const tasksButtonLocator: Locator = By.xpath(`//a[@href = "https://s.onliner.by/tasks"]/span[contains(@class, "b-main-navigation__text")]`)
         await driver.wait(until.elementsLocated(tasksButtonLocator), defaultWaitingTime);
         await driver.findElement(tasksButtonLocator).click();
@@ -54,25 +59,6 @@ it("Should navigate to the tasks page from main page", async () => {
         await driver.wait(until.urlIs(pageUrl), defaultWaitingTime);
         const tasksPageTitle = await driver.findElement(By.css(`a[href= "/tasks"] span.project-navigation__sign`))
         expect(await tasksPageTitle.getText()).to.be.deep.equal("Заказы")
-        })
-
-it("Should show protection pop up while login with correct credentials", async () => {
-        const loginButtonLocator: Locator = By.className("auth-bar__item auth-bar__item--text")
-        await driver.wait(until.elementsLocated(loginButtonLocator), defaultWaitingTime)
-        await driver.findElement(loginButtonLocator).click();
-        const emailFieldLocator: Locator = By.css("div.auth-input__wrapper input[type = text]")
-        await driver.wait(until.elementsLocated(emailFieldLocator), defaultWaitingTime)
-        await driver.findElement(emailFieldLocator).click();
-        await driver.findElement(emailFieldLocator).sendKeys("test12051@mail.ru");
-        const passwordFieldLocator: Locator = By.css("div.auth-input__wrapper input[type = password]")
-        await driver.findElement(passwordFieldLocator).click();
-        await driver.findElement(passwordFieldLocator).sendKeys("test12051");
-        const submitButton = await driver.findElement(By.css("div.auth-form__control button[type = submit]"));
-        await submitButton.click();
-        const protectionPopUpLocator: Locator = By.className("auth-form__mediabox");
-        await driver.wait(until.elementsLocated(protectionPopUpLocator), defaultWaitingTime);
-        const element = await driver.findElement(By.css("div.auth-form__mediabox span"));
-        expect(await element.getText()).to.have.string(`Давайте проверим, вы робот или нет`);
         })
 
 after(async () => {
