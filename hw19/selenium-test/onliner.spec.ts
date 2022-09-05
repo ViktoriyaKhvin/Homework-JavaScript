@@ -8,7 +8,7 @@ const baseUrl = "https://www.onliner.by/"
 const defaultWaitingTime = 5000;
 let pageUrl: string;
 
-describe("Onliner header menu tests", () => {
+describe ("Onliner header menu tests", () => {
      before(async () => {
         await driver.manage().window().maximize();
      })
@@ -19,7 +19,7 @@ describe("Onliner header menu tests", () => {
 it('When User clicks on the logo of site, the main page is displayed', async function () {
         await driver.findElement(By.className('b-top-logo')).click();
         await driver.wait(until.urlContains(baseUrl), defaultWaitingTime);
-    });
+    })
 
 it("Should navigate to the catalog page from main page", async () => {
         const catalotButtonLocator: Locator = By.css(`a[href = "https://catalog.onliner.by"] span.b-main-navigation__text`);
@@ -61,7 +61,7 @@ it("Should navigate to the baraholka page from main page", async () => {
         expect(await baraholkaPageTitle.getText()).to.be.deep.equal("Барахолка")
 })
 
-after(async () => {
+after (async () => {
         await driver.quit();
         })
  })
