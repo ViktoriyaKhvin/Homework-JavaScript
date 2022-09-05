@@ -14,7 +14,7 @@
         "hw16": "npx ts-node ./hw16/index.ts",
         "hw17-test-mocha": "mocha --config='./hw17/.mocharc.json'",
         "hw17-test-jest": "jest --config='./hw17/jest.config.cjs'",
-        "hw19-test": "mocha --timeout 20000 --config='./hw19/.mocharc.json'"
+        "hw19-allure": "mocha --timeout 50000 --config hw19/.mocharc.json"
     },
     "repository": {
         "type": "git",

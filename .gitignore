@@ -1,5 +1,5 @@
-node_modules/
-.nyc_output/
-allure*/
-*.html
-*.exe
+node_modules
+allure-report
+allure-result
+coverage
+chromedriver.exe
