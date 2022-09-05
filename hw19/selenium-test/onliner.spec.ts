@@ -14,7 +14,7 @@ describe("Onliner header menu tests", () => {
      })
      beforeEach(async () => {
         await driver.get(baseUrl);
-
+     })
 
 it('When User clicks on the logo of site, the main page is displayed', async function () {
         await driver.findElement(By.className('b-top-logo')).click();
@@ -65,4 +65,3 @@ after(async () => {
         await driver.quit();
         })
  })
-})
