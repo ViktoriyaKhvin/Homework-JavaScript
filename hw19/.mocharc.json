@@ -1,5 +1,5 @@
 {
-    "extension": ["ts"],
-    "spec": "hw19/selenium-test/**/*.spec.ts",
-    "require": "ts-node/register"
-  } 
+  "extension": ["ts"],
+  "spec": ["**/hw19/selenium-test/**/*.spec.ts"],
+  "require": ["ts-node/register"]
+}
