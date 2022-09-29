@@ -1,0 +1,6 @@
+{
+    "extension": ["ts"],
+    "spec": ["hw21/**/*spec.ts"],
+    "require": ["ts-node/register"],
+    "timeout": "50000"
+  }
